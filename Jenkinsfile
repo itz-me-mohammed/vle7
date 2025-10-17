@@ -1,16 +1,16 @@
 pipeline {
     agent any
+
     environment {
         IMAGE = "itsmohammed/sample-app:${BUILD_NUMBER}"
         COLOR = "green" // initial deployment will go to green
     }
+
     stages {
         stage('Clone Repo') {
             steps {
                 git branch: 'main', url: 'https://github.com/itz-me-mohammed/vle7.git'
             }
-        }
-
         }
 
         stage('Build Docker Image') {
