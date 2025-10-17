@@ -7,8 +7,10 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/itz-me-mohammed/vle7.git'
+                git branch: 'main', url: 'https://github.com/itz-me-mohammed/vle7.git'
             }
+        }
+
         }
 
         stage('Build Docker Image') {
