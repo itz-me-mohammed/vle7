@@ -37,7 +37,7 @@ pipeline {
         stage('Switch Service') {
             steps {
                 input message: "Switch traffic to $COLOR version?"
-                sh 'kubectl patch service sample-app-service -p "{\"spec\": {\"selector\": {\"app\": \"sample-app\", \"color\": \"$COLOR\"}}}"'
+                sh 'kubectl patch service sample-app-service -p \'{"spec": {"selector": {"app": "sample-app", "color": "$COLOR"}}}\''   
             }
         }
     }
